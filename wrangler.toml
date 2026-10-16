@@ -1,0 +1,16 @@
+name = "asmaa-digital-studio"
+main = "worker.js"
+compatibility_date = "2026-10-16"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
+
+[[durable_objects.bindings]]
+name = "PORTFOLIO_DB"
+class_name = "PortfolioDatabase"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["PortfolioDatabase"]
